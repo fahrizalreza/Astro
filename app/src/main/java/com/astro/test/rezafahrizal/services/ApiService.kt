@@ -10,7 +10,7 @@ interface ApiService {
 
     // user list
     @GET("search/users")
-    @Headers("Authorization: token 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")
+    @Headers("Authorization: token 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")
     fun loadUser(
         @Query("q") query: String
     ): Single<UserResponse>

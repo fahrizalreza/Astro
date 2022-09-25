@@ -4,9 +4,20 @@
     <string name="no_ind">Tidak</string>
     <string name="exit_app_ind">Apakah anda ingin keluar dari aplikasi News App?</string>
 
+    <!-- user -->
+    <string name="user_list">GitHub user</string>
+    <string name="search">Search</string>
+    <string name="user_name">Username</string>
+    <string name="favourite">Favourite</string>
+
     <!-- no data -->
     <string name="no_data_found">No data found</string>
     <string name="user_not_available_ind">User tidak ditemukan</string>
+
+    <!-- no response -->
+    <string name="no_response">No response</string>
+    <string name="no_response_description_ind">Tidak dapat memuat data, ada masalah pada \nkoneksi anda</string>
+    <string name="retry_ind">Coba lagi</string>
 
     <!-- loading -->
     <string name="loading_message">Harap tunggu, sedang memuat data Anda</string>

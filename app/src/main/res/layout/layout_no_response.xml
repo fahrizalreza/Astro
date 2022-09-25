@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data class="NoResponseBind">
+        <variable
+            name="viewModel"
+            type="com.astro.test.rezafahrizal.ui.items.noResponseView.NoResponseViewModel" />
+    </data>
+    <!-- no response -->
+    <RelativeLayout
+        android:id="@+id/rl_source_list_no_response_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="@{viewModel.viewVisibility}"
+        tools:visibility="gone">
+
+        <!-- no response icon -->
+        <ImageView
+            android:id="@+id/iv_source_list_no_response"
+            android:layout_width="@dimen/iv_no_response_width"
+            android:layout_height="@dimen/iv_no_response_height"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/iv_no_response_margin_top"
+            android:background="@drawable/ic_not_response"
+            android:contentDescription="@string/no_response" />
+
+        <!-- no response description -->
+        <TextView
+            android:id="@+id/tv_source_list_no_response"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_source_list_no_response"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/tv_no_response_margin_start"
+            android:layout_marginTop="@dimen/tv_no_response_margin_top"
+            android:layout_marginEnd="@dimen/tv_no_response_margin_end"
+            android:lineSpacingExtra="@dimen/tv_no_response_line_spacing_extra"
+            android:text="@string/no_response_description_ind"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/item_no_response_text_size"
+            tools:ignore="SpUsage" />
+
+        <!-- reload -->
+        <Button
+            android:id="@+id/btn_source_list_reload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_source_list_no_response"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/btn_no_response_reload_margin_top"
+            android:background="@drawable/bg_btn_rounded_blue"
+            android:paddingStart="@dimen/btn_no_response_reload_padding_start"
+            android:paddingEnd="@dimen/btn_no_response_reload_padding_end"
+            android:text="@string/retry_ind"
+            android:onClick="@{viewModel::onClickReload}"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/item_no_response_text_size"
+            android:textStyle="bold"
+            tools:ignore="SpUsage" />
+
+    </RelativeLayout>
+
+</layout>

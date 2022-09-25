@@ -8,10 +8,67 @@
     <dimen name="text_size_advance">16sp</dimen>
     <dimen name="text_size_large">18sp</dimen>
 
+    <!-- app bar -->
+    <dimen name="abl_title_elevation">0dp</dimen>
+    <dimen name="toolbar_title_inset_left">0dp</dimen>
+    <dimen name="toolbar_title_inset_start">0dp</dimen>
+    <dimen name="tv_user_list_title_margin_start">20dp</dimen>
+    <dimen name="tv_user_list_title_margin_top">15dp</dimen>
+    <dimen name="tv_user_list_subtitle_margin_start">20dp</dimen>
+    <dimen name="tv_user_list_subtitle_margin_top">5dp</dimen>
+
+    <!-- search bar -->
+    <dimen name="tv_search_bar_text_size">16dp</dimen>
+    <dimen name="item_search_bar_margin_start">12dp</dimen>
+    <dimen name="tv_search_bar_margin_top">15dp</dimen>
+    <dimen name="item_search_bar_margin_end">12dp</dimen>
+    <dimen name="tv_search_bar_drawable_padding">5dp</dimen>
+    <dimen name="tv_search_bar_padding_start">10dp</dimen>
+    <dimen name="tv_search_bar_padding_end">10dp</dimen>
+    <dimen name="tv_search_bar_padding_top">10dp</dimen>
+    <dimen name="tv_search_bar_padding_bottom">5dp</dimen>
+    <dimen name="bg_rounded_radius_small">5dp</dimen>
+
+    <!-- user -->
+    <dimen name="rv_user_list_margin_top">5dp</dimen>
+    <dimen name="view_filler_medium">80dp</dimen>
+    <dimen name="rl_user_list_layout_elevation">4dp</dimen>
+    <dimen name="rl_user_list_layout_height">90dp</dimen>
+    <dimen name="rl_user_list_layout_margin_start">13dp</dimen>
+    <dimen name="rl_user_list_layout_margin_top">10dp</dimen>
+    <dimen name="rl_user_list_layout_margin_end">12dp</dimen>
+    <dimen name="rl_user_list_layout_margin_bottom">7dp</dimen>
+    <dimen name="rl_user_list_layout_icon_margin_start">12dp</dimen>
+    <dimen name="rl_user_list_layout_content_margin_start">7dp</dimen>
+    <dimen name="bg_rounded_thickness">0dp</dimen>
+    <dimen name="item_user_list_layout_margin_top">13dp</dimen>
+    <dimen name="item_user_list_layout_margin_end">12dp</dimen>
+    <dimen name="tv_user_list_layout_user_margin_start">15dp</dimen>
+    <dimen name="tv_user_list_layout_user_margin_top">10dp</dimen>
+    <dimen name="tv_user_list_layout_contract_number_max_width">200dp</dimen>
+    <dimen name="iv_user_list_layout_icon_size">50dp</dimen>
+    <dimen name="tv_user_list_layout_description_margin_end">20dp</dimen>
+    <dimen name="iv_user_list_layout_fave_size">40dp</dimen>
+    <dimen name="rl_user_list_layout_fave_margin_end">50dp</dimen>
+
     <!-- no data -->
     <dimen name="tv_no_data_margin_start">32dp</dimen>
     <dimen name="tv_no_data_margin_top">31dp</dimen>
     <dimen name="tv_no_data_margin_end">32dp</dimen>
+
+    <!--  no response -->
+    <dimen name="item_no_response_text_size">14dp</dimen>
+    <dimen name="iv_no_response_width">250dp</dimen>
+    <dimen name="iv_no_response_height">200dp</dimen>
+    <dimen name="iv_no_response_margin_top">200dp</dimen>
+    <dimen name="tv_no_response_line_spacing_extra">7dp</dimen>
+    <dimen name="tv_no_response_margin_start">31dp</dimen>
+    <dimen name="tv_no_response_margin_top">5dp</dimen>
+    <dimen name="tv_no_response_margin_end">32dp</dimen>
+    <dimen name="btn_no_response_reload_margin_top">34dp</dimen>
+    <dimen name="btn_no_response_reload_padding_start">80dp</dimen>
+    <dimen name="btn_no_response_reload_padding_end">80dp</dimen>
+
 
     <!-- loading progress -->
     <dimen name="ic_loading_progress_width">50dp</dimen>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="ItemUserBind">
+
+        <variable
+            name="adapter"
+            type="com.astro.test.rezafahrizal.ui.user.UserAdapter" />
+
+        <variable
+            name="state"
+            type="com.astro.test.rezafahrizal.base.BaseState" />
+
+        <variable
+            name="userData"
+            type="com.astro.test.rezafahrizal.model.UserLocal" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- layout -->
+        <RelativeLayout
+            android:id="@+id/rl_user_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/rl_user_list_layout_height"
+            android:layout_marginStart="@dimen/rl_user_list_layout_margin_start"
+            android:layout_marginTop="@dimen/rl_user_list_layout_margin_top"
+            android:layout_marginEnd="@dimen/rl_user_list_layout_margin_end"
+            android:layout_marginBottom="@dimen/rl_user_list_layout_margin_bottom"
+            android:background="@drawable/bg_rl_rounded_white"
+            android:elevation="@dimen/rl_user_list_layout_elevation"
+            tools:ignore="UselessParent">
+
+            <!-- layout icon -->
+            <RelativeLayout
+                android:id="@+id/rl_user_list_layout_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/rl_user_list_layout_icon_margin_start"
+                android:layout_marginTop="@dimen/item_user_list_layout_margin_top">
+
+                <!-- icon -->
+                <ImageView
+                    android:id="@+id/iv_user_list_layout_icon"
+                    android:layout_width="@dimen/iv_user_list_layout_icon_size"
+                    android:layout_height="@dimen/iv_user_list_layout_icon_size"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/user_name"
+                    app:loadCircleImage="@{userData.avatar_url}"
+                    tools:src="@drawable/ic_document" />
+
+            </RelativeLayout>
+
+            <!-- layout content -->
+            <RelativeLayout
+                android:id="@+id/rl_user_list_layout_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/rl_user_list_layout_content_margin_start"
+                android:layout_marginTop="@dimen/item_user_list_layout_margin_top"
+                android:layout_marginEnd="@dimen/item_user_list_layout_margin_end"
+                android:layout_toStartOf="@id/rl_user_list_layout_fave"
+                android:layout_toEndOf="@id/rl_user_list_layout_icon">
+
+                <!-- user -->
+                <TextView
+                    android:id="@+id/tv_user_list_layout_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/tv_user_list_layout_user_margin_start"
+                    android:layout_marginTop="@dimen/tv_user_list_layout_user_margin_top"
+                    android:ellipsize="end"
+                    android:maxWidth="@dimen/tv_user_list_layout_contract_number_max_width"
+                    android:maxLines="1"
+                    android:text="@{userData.login}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold"
+                    tools:text="Bein Sport" />
+
+            </RelativeLayout>
+
+            <!-- layout favourite -->
+            <RelativeLayout
+                android:id="@+id/rl_user_list_layout_fave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/item_user_list_layout_margin_top"
+                android:layout_marginEnd="50dp">
+
+                <!-- fave -->
+                <ImageView
+                    android:id="@+id/iv_user_list_layout_fave"
+                    android:layout_width="@dimen/iv_user_list_layout_fave_size"
+                    android:layout_height="@dimen/iv_user_list_layout_fave_size"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:contentDescription="@string/favourite"
+                    android:focusable="true"
+                    app:onClick="@{state}"
+                    app:userData="@{userData}"
+                    tools:src="@drawable/ic_favorite_border" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>
