@@ -47,9 +47,11 @@ class UserActivity :
                     currentState.user,
                     currentState.mode
                 )
+                is UserState.ShowScreenContent -> viewModel.showScreenContent()
+                is UserState.NoData -> viewModel.noData()
                 is UserState.NoResponse -> viewModel.showNoResponse(currentState.noResponseState)
                 is UserState.OnClickReload -> viewModel.setState(currentState.lastState)
-                else -> {}
+                else -> viewModel.showScreenContent()
             }
         }
     }

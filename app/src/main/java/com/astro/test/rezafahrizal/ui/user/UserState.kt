@@ -10,10 +10,12 @@ class UserActivityState : BaseState {
 
 sealed class UserState {
     object Initialize : UserState()
+    object Clear: UserState()
     data class FilterList(val char: CharSequence?) : UserState()
     data class OnClickFave(val user: UserLocal?, val mode: String) : UserState()
     data class OnChecked(val buttonId: Int) : UserState()
     object ShowScreenContent : UserState()
     data class OnClickReload(val lastState: UserState) : UserState()
+    object NoData: UserState()
     data class NoResponse(val noResponseState: UserState) : UserState()
 }

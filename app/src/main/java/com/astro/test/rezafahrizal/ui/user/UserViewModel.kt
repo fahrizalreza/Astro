@@ -74,8 +74,7 @@ class UserViewModel(
             Log.e(LOG_USER_CONNECTION, "connect to api master data = \n$result")
             val items = result.items
             if (items.isEmpty()) {
-                clearAdapter()
-                showNoData()
+                setState(UserState.NoData)
             } else {
                 viewModelScope.launch {
                     repository.saveToLocal(items)
@@ -100,7 +99,7 @@ class UserViewModel(
         adapter.submitList(items)
         bindAdapter.set(adapter)
         setState(UserState.ShowScreenContent)
-        showScreenContent()
+//        showScreenContent()
     }
 
     // clear list table on adapter
@@ -136,6 +135,12 @@ class UserViewModel(
         viewModelScope.launch {
             repository.clearDatabase()
         }
+    }
+
+    // no data
+    fun noData() {
+        clearAdapter()
+        showNoData()
     }
 
     // set current state
