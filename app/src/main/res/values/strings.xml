@@ -2,13 +2,15 @@
     <string name="app_name">Astro</string>
     <string name="yes_ind">Ya</string>
     <string name="no_ind">Tidak</string>
-    <string name="exit_app_ind">Apakah anda ingin keluar dari aplikasi News App?</string>
+    <string name="exit_app_ind">Apakah anda ingin keluar dari aplikasi Astro App?</string>
 
     <!-- user -->
     <string name="user_list">GitHub user</string>
     <string name="search">Search</string>
     <string name="user_name">Username</string>
     <string name="favourite">Favourite</string>
+    <string name="asc">ASC</string>
+    <string name="desc">DESC</string>
 
     <!-- no data -->
     <string name="no_data_found">No data found</string>

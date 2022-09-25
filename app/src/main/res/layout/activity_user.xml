@@ -1,9 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.user.UserActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data class="UserActivityBind">
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.astro.test.rezafahrizal.ui.user.UserViewModel" />
+
+        <variable
+            name="state"
+            type="com.astro.test.rezafahrizal.ui.user.UserActivityState" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".screen.source.SourceActivity">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- header -->
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:contentScrim="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                    app:toolbarId="@+id/toolbar_source">
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar_source"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:contentInsetLeft="@dimen/toolbar_title_inset_left"
+                        app:contentInsetStart="@dimen/toolbar_title_inset_start">
+
+                        <!-- title -->
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/tv_source_list_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/tv_user_list_title_margin_start"
+                                android:layout_marginTop="@dimen/tv_user_list_title_margin_top"
+                                android:text="@string/user_list"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_large"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tv_source_list_subtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_source_list_title"
+                                android:layout_marginStart="@dimen/tv_user_list_subtitle_margin_start"
+                                android:layout_marginTop="@dimen/tv_user_list_subtitle_margin_top"
+                                android:text="@string/astro_test"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/text_size_medium" />
+
+                            <!-- search text -->
+                            <EditText
+                                android:id="@+id/et_source_search"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_source_list_subtitle"
+                                android:layout_marginStart="@dimen/item_search_bar_margin_start"
+                                android:layout_marginTop="@dimen/tv_search_bar_margin_top"
+                                android:layout_marginEnd="@dimen/item_search_bar_margin_end"
+                                android:layout_marginBottom="10dp"
+                                android:autofillHints="@string/search"
+                                android:background="@drawable/bg_tv_rounded_white"
+                                android:clickable="true"
+                                android:drawableStart="@drawable/ic_search_keyword"
+                                android:drawablePadding="@dimen/tv_search_bar_drawable_padding"
+                                android:focusable="true"
+                                android:hint="@string/search"
+                                android:inputType="text"
+                                android:paddingStart="@dimen/tv_search_bar_padding_start"
+                                android:paddingTop="@dimen/tv_search_bar_padding_top"
+                                android:paddingEnd="@dimen/tv_search_bar_padding_end"
+                                android:paddingBottom="@dimen/tv_search_bar_padding_bottom"
+                                android:textColor="@color/white2"
+                                android:textColorHint="@color/white2"
+                                android:textSize="@dimen/text_size_advance"
+                                app:afterTextChangedListener="@{viewModel}"
+                                tools:ignore="UnusedAttribute" />
+
+                            <RadioGroup
+                                android:id="@+id/r_mode_search"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/r_mode_search_bar_height"
+                                android:layout_below="@id/et_source_search"
+                                android:layout_marginStart="@dimen/r_mode_search_bar_margin_start"
+                                android:layout_marginTop="@dimen/r_mode_search_bar_margin_top"
+                                android:layout_marginEnd="@dimen/r_mode_search_bar_margin_end"
+                                android:orientation="horizontal"
+                                app:onChecked="@{viewModel}">
+
+                                <RadioButton
+                                    android:id="@+id/rb_asc_search"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/r_asc_desc_search_bar_height"
+                                    android:layout_marginStart="@dimen/r_asc_search_bar_margin_start"
+                                    android:buttonTint="@color/white"
+                                    android:checked="true"
+                                    android:text="@string/asc"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_large"
+                                    android:textStyle="bold" />
+
+                                <RadioButton
+                                    android:id="@+id/rb_desc_search"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="@dimen/r_asc_desc_search_bar_height"
+                                    android:layout_marginStart="@dimen/r_desc_search_bar_margin_start"
+                                    android:buttonTint="@color/white"
+                                    android:text="@string/desc"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_size_large"
+                                    android:textStyle="bold" />
+                            </RadioGroup>
+
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <!-- list item -->
+                <LinearLayout
+                    android:id="@+id/ll_source_list_layout_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="@{viewModel.contentScreenVisibility}"
+                    tools:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_source_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/rv_user_list_margin_top"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:setAdapter="@{viewModel.bindAdapter}"
+                        tools:listitem="@layout/item_user_list_layout" />
+
+                    <!-- filler -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/view_filler_medium" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+            <!-- no data screen -->
+            <include
+                android:id="@+id/rl_source_list_no_data_screen"
+                layout="@layout/layout_no_data"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                tools:visibility="gone" />
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <!-- no response -->
+        <include
+            android:id="@+id/rl_source_list_no_response_screen"
+            layout="@layout/layout_no_response"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+        <!-- progress bar -->
+        <include
+            android:id="@+id/ll_progress_view_source_list"
+            layout="@layout/layout_progress_bar"
+            android:visibility="@{viewModel.isLoading()}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

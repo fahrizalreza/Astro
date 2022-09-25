@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable-v24/ic_no_data_found.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/ic_not_response.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/ic_search_keyword.xml" value="0.115" />
+        <entry key="app/src/main/res/layout/activity_user.xml" value="0.13229166666666667" />
         <entry key="app/src/main/res/layout/item_user_list_layout.xml" value="0.13229166666666667" />
         <entry key="app/src/main/res/layout/layout_no_data.xml" value="0.13229166666666667" />
         <entry key="app/src/main/res/layout/layout_no_response.xml" value="0.13229166666666667" />

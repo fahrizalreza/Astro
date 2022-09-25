@@ -62,5 +62,9 @@ class Repository(context: Context) {
         appDatabase.parametersDao().deleteUserFavourite(userLocal?.login.toString())
     }
 
+    suspend fun clearDatabase() {
+        appDatabase.parametersDao().deleteUserLocal()
+    }
+
 
 }

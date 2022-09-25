@@ -1,24 +1,28 @@
 package com.astro.test.rezafahrizal.extension
 
+import android.widget.EditText
 import android.widget.ImageView
+import android.widget.RadioGroup
 import androidx.databinding.BindingAdapter
 import com.astro.test.rezafahrizal.R
 import com.astro.test.rezafahrizal.annotation.DataTypeAnnotation
 import com.astro.test.rezafahrizal.base.BaseState
+import com.astro.test.rezafahrizal.extension.ViewExtension.afterTextChanged
 import com.astro.test.rezafahrizal.extension.ViewExtension.loadCircleImage
 import com.astro.test.rezafahrizal.extension.ViewExtension.loadImage
 import com.astro.test.rezafahrizal.model.UserLocal
 import com.astro.test.rezafahrizal.ui.user.UserActivityState
 import com.astro.test.rezafahrizal.ui.user.UserState
+import com.astro.test.rezafahrizal.ui.user.UserViewModel
 
 object DataBindAdapter {
 
-//    @BindingAdapter("app:afterTextChangedListener")
-//    @JvmStatic
-//    fun afterTextChangedListener(editText: EditText, viewModel: UserViewModel?) {
-//        editText.afterTextChanged { editChar -> viewModel?.postState(UserState.FilterList(editChar)) }
-//    }
-//
+    @BindingAdapter("app:afterTextChangedListener")
+    @JvmStatic
+    fun afterTextChangedListener(editText: EditText, viewModel: UserViewModel?) {
+        editText.afterTextChanged { editChar -> viewModel?.postState(UserState.FilterList(editChar)) }
+    }
+
     @BindingAdapter("app:loadImage")
     @JvmStatic
     fun setImage(
@@ -71,14 +75,14 @@ object DataBindAdapter {
         }
     }
 
-//    @BindingAdapter("app:onChecked")
-//    @JvmStatic
-//    fun onChecked(radio: RadioGroup, viewModel: UserViewModel?) {
-//        val intSelectButton: Int = radio.checkedRadioButtonId
-//
-//        radio.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { radio, id ->
-//            viewModel?.setState(UserState.OnChecked(intSelectButton))
-//        })
-//    }
+    @BindingAdapter("app:onChecked")
+    @JvmStatic
+    fun onChecked(radio: RadioGroup, viewModel: UserViewModel?) {
+        val intSelectButton: Int = radio.checkedRadioButtonId
+
+        radio.setOnCheckedChangeListener(RadioGroup.OnCheckedChangeListener { radio, id ->
+            viewModel?.setState(UserState.OnChecked(intSelectButton))
+        })
+    }
 
 }
