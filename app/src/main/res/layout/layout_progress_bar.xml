@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data class="LoadBarBind">
+        <variable
+            name="viewModel"
+            type="com.astro.test.rezafahrizal.ui.items.loadBar.LoadBarViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent_white"
+        android:gravity="center"
+        android:visibility="@{viewModel.viewVisibility}"
+        android:orientation="vertical">
+
+        <!-- loading icon -->
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/ic_loading_progress"
+            android:layout_width="@dimen/ic_loading_progress_width"
+            android:layout_height="@dimen/ic_loading_progress_height"
+            android:src="@drawable/ic_loading_animation" />
+
+        <TextView
+            android:id="@+id/tv_loading_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/tv_loading_progress_margin_top"
+            android:gravity="center"
+            android:text="@string/loading_message"
+            android:textColor="@color/colorPrimary" />
+
+    </LinearLayout>
+</layout>

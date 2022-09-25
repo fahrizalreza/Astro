@@ -3,4 +3,13 @@
     <string name="yes_ind">Ya</string>
     <string name="no_ind">Tidak</string>
     <string name="exit_app_ind">Apakah anda ingin keluar dari aplikasi News App?</string>
+
+    <!-- no data -->
+    <string name="no_data_found">No data found</string>
+    <string name="user_not_available_ind">User tidak ditemukan</string>
+
+    <!-- loading -->
+    <string name="loading_message">Harap tunggu, sedang memuat data Anda</string>
+    <string name="astro_test">Astro Test</string>
+
 </resources>

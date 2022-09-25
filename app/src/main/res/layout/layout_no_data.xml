@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data class="NoDataBind">
+        <variable
+            name="viewModel"
+            type="com.astro.test.rezafahrizal.ui.items.noDataView.NoDataViewModel" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_source_list_no_data_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="@{viewModel.viewVisibility}"
+        tools:visibility="gone">
+
+        <!-- no data icon -->
+        <ImageView
+            android:id="@+id/iv_source_list_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/ic_no_data_found"
+            android:contentDescription="@string/no_data_found" />
+
+        <!-- no data description -->
+        <TextView
+            android:id="@+id/tv_source_list_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_source_list_no_data"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="@dimen/tv_no_data_margin_start"
+            android:layout_marginTop="@dimen/tv_no_data_margin_top"
+            android:layout_marginEnd="@dimen/tv_no_data_margin_end"
+            android:text="@string/user_not_available_ind"
+            android:textAlignment="center" />
+
+    </RelativeLayout>
+
+</layout>
