@@ -99,7 +99,6 @@ class UserViewModel(
         adapter.submitList(items)
         bindAdapter.set(adapter)
         setState(UserState.ShowScreenContent)
-//        showScreenContent()
     }
 
     // clear list table on adapter
